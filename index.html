@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Negociações</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="fafafa grey lighten-5 ">
+    <div class="container z-depth-3">
+
+        <h3 class="center-align">Cadastro Pessoa</h3>
+
+        <form class="form" id="formapessoa" onsubmit=controlaPessoas.NovaPessoa(event)>
+            <div class="row ">
+                <div class="input-field col s12 m12 l12">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" class=" validate" required>
+                </div>
+                <div class="input-field col s12 m12 l12">
+
+                    <label for="cep">CEP</label>
+                    <input type="number" id="cep" min="0" name="cep" class="validate" required />
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" class="validate" required />
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" class="validate" required />
+                </div>
+
+
+                <div class="input-field col s12 m12 l12">
+                    <label for="rua">Rua / Avenida </label>
+                    <input type="text" id="rua" name="rua" class="validate" required />
+                </div>
+
+                <div class="input-field col s12  m8 l6">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" name="bairro" class="validate" required />
+                </div>
+
+                <div class="input-field col s12 m4 l6">
+                    <label for="numero">Número </label>
+                    <input type="number" min="0" id="numero" name="numero" class="validate" required />
+                </div>
+
+                <div class="input-field col s12 m5 l4">
+                    <label for="celular">Telefone celular</label>
+                    <input id="celular" name="celular" type="number" min="0" class="validate" required />
+                </div>
+                <div class="input-field col s6 m4 l4">
+                    <label for="peso">peso</label>
+                    <input id="peso" name="peso" type="number" min="0" step="0.1" class="validate" required />
+                </div>
+                <div class="input-field col s6 m3 l4">
+                    <label for="altura">altura</label>
+                    <input id="altura" name="altura" type="number" min="0" step="0.1" class="validate" required />
+                </div>
+                <div class="input-field col s12 m12 l12">
+                    <a class='dropdown-trigger btn-large' id='dropdownp' name="dropdownp" data-target='dropdown1'></a>
+                    <label for="dropdownp" id='dropdownlabel'>Problemas de Saúde</label>
+                    <ul id='dropdown1' class='dropdown-content'>
+
+
+                        <p>
+                            <label>
+                                <input value="1" class="saude1" name="saude1" type="checkbox" />
+                                <span>Pessoas idosas</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input value="2" class="saude1" name="saude2" type="checkbox" />
+                                <span>Doença cardíaca</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input value="3" class="saude1" name="saude3" type="checkbox" />
+                                <span>Doença pulmonar</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="4" class="saude1" name="saude4" type="checkbox" />
+                                <span>Neoplasias ou hipertensão arterial</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="5" class="saude1" name="saude5" type="checkbox" />
+                                <span>Outras doenças crónicas</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="6" class="saude1" name="saude6" type="checkbox" />
+                                <span>Tratamentos de quimioterapia</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="7" class="saude1" name="saude7" type="checkbox" />
+                                <span>Artrite reumatoide</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="8" class="saude1" name="saude8" type="checkbox" />
+                                <span>Lúpus</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="9" class="saude1" name="saude9" type="checkbox" />
+                                <span>Esclerose múltipla/span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="10" class="saude1" name="saude10" type="checkbox" />
+                                <span>Doenças inflamatórias do intestino</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="11" class="saude1" name="saude11" type="checkbox" />
+                                <span>VIH/sida</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="12" class="saude1" name="saude12" type="checkbox" />
+                                <span>Doentes transplantados</span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input value="13" class="saude1" name="saude13" type="checkbox" />
+                                <span>Imunodeficiências e doenças autoimunes</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input value="14" class="saude1" name="saude14" type="checkbox" />
+                                <span>Outras</span>
+                            </label>
+                        </p>
+
+                    </ul>
+                </div>
+
+                <div class="center-align input-field col s12 m12 l12">
+                    <div class="center-align input-field col s12 m6 l6">
+                        <button class="btn  waves-effect waves-light green" type="submit">Incluir <i
+                                class=" material-icons right">send</i></button>
+                    </div>
+
+                    <div class="center-align input-field col s12 m6 l6">
+                        <button class="btn waves-effect waves-light red" type="reset">
+                            Apagar<i class=" material-icons right">delete</i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+
+
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h5>editar informaçoes</h5>
+                <form class="form" id="formapessoae" onsubmit="controlaPessoas.alteraPessoa(event)">
+                    <div class="row ">
+
+                        <div class="input-field col s12 m12 l12" style="display: none;">
+                            <label for="ide" >id</label>
+                            <input type="text" id="ide" name="ide">
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <label for="nome" class="active">Nome</label>
+                            <input type="text" id="nomee" name="nome" class=" validate" required>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+
+                            <label for="cep" class="active">CEP</label>
+                            <input type="number" id="cepe" min="0" name="cep" class="validate" required />
+                        </div>
+                        <div class="input-field col s12 m6 l6">
+                            <label for="estado" class="active">Estado</label>
+                            <input type="text" id="estadoe" name="estado" class="validate" required />
+                        </div>
+                        <div class="input-field col s12 m6 l6">
+                            <label for="cidade" class="active">Cidade</label>
+                            <input type="text" id="cidadee" name="cidade" class="validate" required />
+                        </div>
+
+
+                        <div class="input-field col s12 m12 l12">
+                            <label for="rua" class="active">Rua / Avenida </label>
+                            <input type="text" id="ruae" name="rua" class="validate" required />
+                        </div>
+
+                        <div class="input-field col s12  m8 l6">
+                            <label for="bairro" class="active">Bairro</label>
+                            <input type="text" id="bairroe" name="bairro" class="validate" required />
+                        </div>
+
+                        <div class="input-field col s12 m4 l6">
+                            <label for="numero" class="active">Número </label>
+                            <input type="number" min="0" id="numeroe" name="numero" class="validate" required />
+                        </div>
+
+                        <div class="input-field col s12 m5 l4">
+                            <label for="telefone" class="active">Telefone celular</label>
+                            <input id="telefonee" name="telefone" type="number" min="0" class="validate" required />
+                        </div>
+                        <div class="input-field col s6 m4 l4">
+                            <label for="peso" class="active">peso</label>
+                            <input id="pesoe" name="peso" type="number" min="0" step="0.1" class="validate" required />
+                        </div>
+                        <div class="input-field col s6 m3 l4">
+                            <label for="altura" class="active">altura</label>
+                            <input id="alturae" name="altura" type="number" min="0" step="0.1" class="validate"
+                                required />
+                        </div>
+
+                        <div class="input-field col s12 m12 l12">
+                            <a class='dropdown-trigger btn-large' id='dropdownp2' name="dropdownp2"
+                                data-target='dropdown2'></a>
+                            <label for="dropdownp2" id='dropdownlabel2'>Ecolha as opçoes</label>
+                            <ul id='dropdown2' class='dropdown-content'>
+
+
+                                <p>
+                                    <label>
+                                        <input value="1" class="saude2" name="saude1" id="saude1" type="checkbox" />
+                                        <span>Pessoas idosas</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input value="2" class="saude2" name="saude2" id="saude2" type="checkbox" />
+                                        <span>Doença cardíaca</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input value="3" class="saude2" name="saude3" id="saude3" type="checkbox" />
+                                        <span>Doença pulmonar</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="4" class="saude2" name="saude4" id="saude4" type="checkbox" />
+                                        <span>Neoplasias ou hipertensão arterial</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="5" class="saude2" name="saude5" id="saude5" type="checkbox" />
+                                        <span>Outras doenças crónicas</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="6" class="saude2" name="saude6" id="saude6" type="checkbox" />
+                                        <span>Tratamentos de quimioterapia</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="7" class="saude2" name="saude7" id="saude7" type="checkbox" />
+                                        <span>Artrite reumatoide</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="8" class="saude2" name="saude8" id="saude8" type="checkbox" />
+                                        <span>Lúpus</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="9" class="saude2" name="saude9" id="saude9" type="checkbox" />
+                                        <span>Esclerose múltipla</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="10" class="saude2" name="saude10" id="saude10" type="checkbox" />
+                                        <span>Doenças inflamatórias do intestino</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="11" class="saude2" name="saude11" id="saude11" type="checkbox" />
+                                        <span>VIH/sida</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="12" class="saude2" name="saude12" id="saude12" type="checkbox" />
+                                        <span>Doentes transplantados</span>
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label>
+                                        <input value="13" class="saude2" name="saude13" id="saude13" type="checkbox" />
+                                        <span>Imunodeficiências e doenças autoimunes</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input value="14" class="saude2" name="saude14" id="saude14" type="checkbox" />
+                                        <span>Outras</span>
+                                    </label>
+                                </p>
+
+                            </ul>
+                        </div>
+
+
+                        <div class="center-align input-field col s12 m12 12">
+                            <button class="btn c waves-effect waves-light green modal-close" type="submit">Salvar <i
+                                    class=" material-icons right">save</i></button>
+                        </div>
+
+
+
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn  waves-effect waves-light red modal-close">Fechar 
+                        </button>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h5>deletar informaçoes</h5>
+
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn  waves-effect waves-light red modal-close"
+                    onclick=controlaPessoas.deletaPessoa()>deletar</button>
+                <button class="btn  waves-effect waves-light modal-close blue ">cancelar</button>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content row">
+                <h5>Visializar Informaçoes</h5>
+
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6>Nome:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="nomev"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6>Id:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="idv"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6>Cep:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="cepv"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Estado:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="estadov"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Cidade:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="cidadev"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Rua / Avenida:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="ruav"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Bairro:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="bairrov"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Numero:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="numerov"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Telefone celular:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="telefonev"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Peso:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="pesov"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Altura:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="alturav"></p>
+                    </div>
+                </div>
+                <div class="col s12 m12 12">
+                    <div class="col s4 m4 l4">
+                        <h6> Problemas de Saúde:</h6>
+                    </div>
+                    <div class="col s8 m8 l8">
+                        <p id="saudev"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn  waves-effect waves-light red modal-close">Fechar 
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <br>
+    <br>
+    <div class="container z-depth-3">
+        <table class="responsive-table centered highlight">
+            <thead>
+                <tr>
+                    <th class="center-align">Nome</th>
+                    <th class="center-align">Estado</th>
+                    <th class="center-align">Cidade</th>
+                    <th class="center-align">Bairro</th>
+                    <th class="center-align">Telefone</th>
+                    <th class="center-align">Ação</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="tabpessoa">
+
+            </tbody>
+
+            <tfoot>
+            </tfoot>
+        </table>
+
+    </div>
+    <script src="models/Pessoas.js"></script>
+    <script src="views/exibePessoa.js"></script>
+    <script src="controllers/controlaPessoas.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/materialize.min.js"></script>
+    <script src="models/ListaPessoas.js"></script>
+    <script>
+        const controlaPessoas = new ControlaPessoas();
+    </script>
+</body>
+
+</html>
